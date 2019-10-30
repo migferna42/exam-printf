@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/29 21:24:29 by lmartin           #+#    #+#              #
-#    Updated: 2019/10/30 04:53:54 by mle-floc         ###   ########.fr        #
+#    Updated: 2019/10/30 05:10:18 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #! /bin/bash
@@ -15,7 +15,7 @@
 trap ctrl_c INT
 
 function ctrl_c() {
-	kill $pid
+	kill $pid > /dev/null 2>&1
 	wait $pid 2>/dev/null
 	rm -rf "main.o"
 	rm -rf "mine_system_d.o"
@@ -31,8 +31,8 @@ function ctrl_c() {
 compil ()
 {
 	gcc -Wall -Wextra -Werror -c ../ft_printf.c > /dev/null 2>&1
-	gcc -c main.c mine_system_d.c mine_system_s.c mine_system_x.c > /dev/null 2>&1
-	gcc -o test_printf ft_printf.o main.o mine_system_d.o mine_system_s.o mine_system_x.o > /dev/null 2>&1
+	gcc -c ./srcs/main.c ./srcs/mine_system_d.c ./srcs/mine_system_s.c ./srcs/mine_system_x.c > /dev/null 2>&1
+	gcc -o ./test_printf ft_printf.o main.o mine_system_d.o mine_system_s.o mine_system_x.o > /dev/null 2>&1
 }
 
 start ()
@@ -94,8 +94,8 @@ printf "\e[34m         :+:      :+:    :+:   \e[0m\n"
 printf "\e[34m       +:+ +:+         +:+     \e[0m\n"
 printf "\e[34m     +#+  +:+       +#+        \e[0m\n"
 printf "\e[34m   +#+#+#+#+#+   +#+           \e[0m\n"
-printf "\e[34m        #+#    #+#             \e[0m\n"
-printf "\e[34m       ###   ########.fr       \e[0m\e[36mby @lmartin #Night-Squad\e[0m\n"
+printf "\e[34m        #+#    #+#             \e[0m\e[36mby @lmartin &\e[0m\n"
+printf "\e[34m       ###   ########.fr       \e[0m\e[36m @mle-floc for Night-Squad\e[0m\n"
 printf "\e[34m                               \e[0m\n"
 printf "\e[100m            ~ TRAINING PRINTF FOR EXAM RANK 02 ~            \e[0m\n"
 printf "Your file must be in ../ to be corrected, and named ft_print\n.c otherwise, you will get \e[31m[COMPILATION FAILED]\e[0m flag\n"
