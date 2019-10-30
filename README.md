@@ -18,8 +18,8 @@ Then when you want to grade your work, you should have or place the ft_printf.c 
 * **Leo Martin** - [SimplySka](https://github.com/SimplySka)
 * **Matteo Le Floch** - [matteoolefloch](https://github.com/matteoolefloch)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Night-squad/exam_printf/graphs/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
