@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/29 21:24:29 by lmartin           #+#    #+#              #
-#    Updated: 2019/10/30 02:23:00 by lmartin          ###   ########.fr        #
+#    Updated: 2019/10/30 02:30:03 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #! /bin/bash
@@ -45,6 +45,7 @@ grademe() {
 	echo "done testing"
 	rm "test_printf"
 }
+clear
 printf "\e[34m                               \e[0m\n"
 printf "\e[34m           :::      ::::::::   \e[0m\n"
 printf "\e[34m         :+:      :+:    :+:   \e[0m\n"
