@@ -1,16 +1,32 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    grademe.sh                                         :+:      :+:    :+:    #
+#    exam_printf.sh                                     :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/29 21:24:29 by lmartin           #+#    #+#              #
-#    Updated: 2019/10/30 03:15:01 by lmartin          ###   ########.fr        #
+#    Updated: 2019/10/30 04:53:54 by mle-floc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #! /bin/bash
 #!/usr/bin/osascript
+
+trap ctrl_c INT
+
+function ctrl_c() {
+	kill $pid
+	wait $pid 2>/dev/null
+	rm -rf "main.o"
+	rm -rf "mine_system_d.o"
+	rm -rf "mine_system_s.o"
+	rm -rf "mine_system_x.o"
+	rm -rf "ft_printf.o"
+	rm -rf "test_printf"
+	rm -rf "this_out"
+    printf "$1 \e[31m[EXIT...]\e[0m\n"
+	exit
+}
 
 compil ()
 {
@@ -52,8 +68,7 @@ grademe() {
 	compil
 	if [ ! -f test_printf ]; then
 		printf "\e[31m[COMPILATION FAILED]\e[0m\n"
-		printf "============================================================\n"
-		exit
+		start
 	fi
 	printf "============================================================\n"
 	touch "this_out"
@@ -62,6 +77,8 @@ grademe() {
 	tester "system_x"
  	printf "============================================================\n"
 	printf "\e[92m[CONGRATULATIONS 100]\e[0m\n"
+	kill $pid
+	wait $pid 2>/dev/null
 	rm "main.o"
 	rm "mine_system_d.o"
 	rm "mine_system_s.o"
@@ -87,10 +104,13 @@ printf "============================================================\n"
 printf "If you want to start the test, type '\e[92myes\e[0m', a 120mn countdown\n will start.\n"
 read yes
 printf "============================================================\n"
-if [ "$yes" != "yes" ]; then
+if [ "$yes" != "yes" && "$yes" != "y"]; then
 	printf "OK BYE.\n"
 	exit
 fi
+
+python timer.py $$ &
+pid=$!
 printf "\e[35msubject.en.txt (and fr) is available in /subjects\e[0m\n\n"
 cat	subjects/subject.en.txt
 start
