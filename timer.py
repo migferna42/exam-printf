@@ -14,12 +14,16 @@ from Tkinter import *
 import time
 import sys
 import subprocess
+import os
 
 class Countdown:
 
     def __init__(self, master):
         frame = Frame(master)
         frame.pack()
+	frame.configure(background='black')
+
+
 
         self.running = True
         self.time1 = ''
@@ -28,8 +32,8 @@ class Countdown:
         self.secs = 0
         self.hours = 2
 
-        self.clock = Label(frame, width=7, font=('fixed', 40))
-        self.clock.grid(row=1, columnspan=1, padx=5, pady=(5, 5))
+        self.clock = Label(frame, width=7, bg='black', fg='white', font=('Futura', 40, ))
+        self.clock.grid(row=1, columnspan=100, padx=0, pady=(10))
         self.tick()
 
     def tick(self):
@@ -65,12 +69,13 @@ def end():
 	bashCommand = "kill " + sys.argv[1] + " >/dev/null 2>&1"
 	process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, shell=True)
 	root.destroy()
-
+username = os.environ["USER"]
 root = Tk()
-root.title("Exam - Timer")
+root.title("Exam - " + username)
 c = Countdown(root)
-root.geometry("200x80+0+0")
+root.geometry("200x80")
+root.configure(background='black')
+root.attributes("-topmost", 1)
 root.resizable(0, 0)
-root.wm_attributes("-topmost", True)
 root.after(7200000,end)
 root.mainloop()
