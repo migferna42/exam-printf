@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/29 21:24:29 by lmartin           #+#    #+#              #
-#    Updated: 2019/10/30 03:07:04 by lmartin          ###   ########.fr        #
+#    Updated: 2019/10/30 03:15:01 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #! /bin/bash
@@ -61,6 +61,7 @@ grademe() {
 	tester "system_s"
 	tester "system_x"
  	printf "============================================================\n"
+	printf "\e[92m[CONGRATULATIONS 100]\e[0m\n"
 	rm "main.o"
 	rm "mine_system_d.o"
 	rm "mine_system_s.o"
