@@ -12,6 +12,7 @@ Then when you want to grade your work, you should have or place the ft_printf.c 
 * [sys] - Python lib 
 * [Tkinter] - Python lib
 * [subprocess] - Python lib
+* [os] - Python lib
 
 ## Authors
 
