@@ -1,0 +1,58 @@
+
+ret : 1
+test
+ret : 5
+ceci est un test, ok ?
+ret : 23
+          
+ret : 11
+
+ret : 1
+      test
+ret : 11
+test
+ret : 5
+ceci est un       test, ok ?
+ret : 29
+ceci est un test, ok ?
+ret : 23
+          
+ret : 11
+        
+ret : 9
+        
+ret : 9
+   
+ret : 4
+  
+ret : 3
+
+ret : 1
+
+ret : 1
+          
+ret : 11
+
+ret : 1
+          
+ret : 11
+      test
+ret : 11
+    test
+ret : 9
+      te
+ret : 9
+ te
+ret : 4
+tes
+ret : 4
+test
+ret : 5
+
+ret : 1
+          
+ret : 11
+test
+ret : 5
+          
+ret : 11
